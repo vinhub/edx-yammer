@@ -1,18 +1,22 @@
-from courseware.tabs import EnrolledTab
-from django.utils.translation import ugettext_noop
-from django.conf import settings
+from courseware.tabs import CourseTab
 
 
-class YammerTab(EnrolledTab):
+class YammerTab(CourseTab):
     """A new course tab."""
 
     name = "yammer"
-    title = ugettext_noop("Yammer")
-    view_name = "yammer_tab"
-    is_default = True
-    is_hideable = True
+    title = "Yammer"
+    view_name = "yammer"
+    tab_id = "yammer"
+    priority = 50
+    type = "yammer"
 
     @classmethod
     def is_enabled(cls, course, user=None):
         """Returns true if this tab is enabled."""
+        return True
+
+    @classmethod
+    def validate(cls, tab_dict, raise_error=True):
+
         return True

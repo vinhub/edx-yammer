@@ -3,9 +3,9 @@
 from django.conf.urls import patterns, url
 from django.contrib.auth.decorators import login_required
 
-from views import YammerTabView
+from .views import YammerView
 
 urlpatterns = patterns(
     'yammer.views',
-    url(r"^/$", login_required(YammerTabView.as_view()), name="yammer_tab")
+    url(r"^/$", login_required(YammerView.as_view()), name="yammer")
 )
