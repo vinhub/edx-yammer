@@ -12,7 +12,7 @@ class YammerView(GenericAPIView):
         course_key = CourseKey.from_string(course_id)
         course = get_course_with_access(request.user, "load", course_key)
         user = request.user
-        # add_lookup('yammer', 'templates', 'yammer')
+        add_lookup('main', '/edx/app/edxapp/edx-platform/lms/djangoapps/yammer/templates')
         context = {
             "course": course,
             "user_info": {
